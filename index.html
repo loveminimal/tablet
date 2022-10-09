@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
+	<title>Canvas</title>
+</head>
+
+<body>
+	<!-- 界面语言切换 -->
+	<div id="sl" class="btn btn-l" onclick="switchLang()">中 / En</div>
+
+	<div class="container">
+		<h2 id="title">手写板</h2>
+
+		<!-- 画布 -->
+		<canvas 
+			id="cvs" 
+			width="600" height="300" 
+			ontouchstart="touchstart(event)" 
+			ontouchmove="touchmove(event)"
+			ontouchend="touchend(event)" 
+			onmousedown="mousedown(event)" 
+			onmousemove="mousemove(event)"
+			onmouseup="mouseup(event)"
+			>
+		</canvas>
+
+		<!-- 功能区 -->
+		<div class="opt-wrapper">
+			<div id="gen" class="btn" onclick="expCvs()">生成</div>
+			<div id="clr" class="btn" onclick="clrCvs()">清除</div>
+			<input class="btn" type="color" value="" onchange="selectColor(event)">
+		</div>
+
+		<!-- 生成图片展示区域 -->
+		<img id="img" src="" alt="" />
+	</div>
+
+	<script src="./main.js"></script>
+</body>
+
+</html>
